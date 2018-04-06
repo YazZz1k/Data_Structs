@@ -5,6 +5,7 @@
 
 #include<stdlib.h>
 #include<stdio.h>
+#include<assert.h>
 
 class Stack
 {
@@ -14,13 +15,24 @@ class Stack
         size_t size;
     public:
         Stack();
+        Stack(int len, ...);
+        Stack(int* arr, int len);
+        Stack(const Stack&);
         ~Stack();
+
         void push(int new_el);
         int  pop();
         int  get();
         bool is_empty();
         int  get_size();
         void do_empty();
+
+        void sub();
+        void add();
+        void mul();
+
+    private:
+        bool pop_two_elements(int& fi, int& se);
 };
 
 #endif

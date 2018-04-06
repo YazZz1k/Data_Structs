@@ -2,16 +2,14 @@
 
 int main()
 {
-    Stack st;
-    for(int i=0; i<100000; i++)
-        st.push(i);
+    int arr[6];
+    for(int i=0; i<6; i++)
+        arr[i]=i;
+    Stack s(arr, 6);
 
-    for(int i=0; i<100002; i++)
-        printf("%d %d\n", st.get(), st.pop());
-
-
-
+    int len = s.get_size();
+    for(int i=0; i<len; i++)
+        printf("%d\n", s.pop());
 
     return 0;
-
 }
